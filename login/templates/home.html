@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block body %}
+<form method="POST">  
+    {% csrf_token %}
+    {% include 'messages.html' %}
+    
+   
+        <div>
+          WELCOME 
+        </div>
+       <a href="/">Logout</a>
+</form>
+ 
+{% endblock %}

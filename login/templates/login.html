@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% block body %}
+<form method="POST" class="post-form" action="/home/">  
+    {% csrf_token %}
+    {% include 'messages.html' %}
+    <div class="col-md-8">
+        <div class="form-group">
+            <label for="username">Username</label>
+            <input type="text" name="username" class="form-control" required="required"/>
+        </div>
+        <div class="form-group">
+            <label for="password">Password</label>
+            	<input type="password" name="password" id="myInput" class="form-control" required="required"/>
+	     	&emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp;<input type="checkbox" onclick="myFunction()">Show Password
+			<script>
+				function myFunction() 
+				{
+ 		 			var x = document.getElementById("myInput");
+ 					 if (x.type === "password") 
+					{
+   						 x.type = "text";
+ 					 }
+					 else 
+					{
+   						 x.type = "password";
+ 					 }
+				}
+			</script>
+        </div>
+        <center><label class="text-danger">{{ msg }}</label></center>
+        <br />
+        <div class="form-group">
+            <button class="btn btn-primary form-control"><span class="glyphicon glyphicon-log-in"></span> Login</button>
+        </div>
+	<div>
+        Not a member?<a href="/"> Signup Now</a>
+    </div>
+    </div>
+</form>
+ 
+{% endblock %}
+
+
+
+    

@@ -1,0 +1,23 @@
+<html>
+<head>
+<style>
+div.alert {
+  font-size: 150%;
+}
+
+</style>
+</head>
+<body>
+{% if messages %}
+{% for message in messages %}
+
+<div class ="alert {{ message.tags }} m-2" id="msg" role="alert">
+<center>{{ message }}</center>
+</div>  
+
+
+ 
+{% endfor %}
+{% endif %}
+</body></html>
+
